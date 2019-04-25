@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "serverless": "^1.41.1",
+    "serverless-offline": "^4.9.4",
+    "serverless-python-requirements": "^4.3.0"
+  },
+  "scripts": {
+    "start": "sls offline --host 0.0.0.0"
+  }
+}

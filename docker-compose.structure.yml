@@ -1,0 +1,8 @@
+version: '3'
+services:
+  structure_test:
+    image: flopes/container-structure-test-docker
+    volumes:
+      - "./docker/test/config.yaml:/test-config/tests/config.yaml"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    command: test --image python-serverless-boilerplate_serverless --config tests/config.yaml

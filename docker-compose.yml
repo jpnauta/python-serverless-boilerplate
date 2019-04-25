@@ -1,0 +1,8 @@
+version: '3'
+services:
+  serverless:
+    build: .
+    volumes:
+      - ./apps:/opt/app/apps
+    ports:
+      - "3000:3000"

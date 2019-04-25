@@ -1,0 +1,27 @@
+service: gas-measurement-operations-functions
+provider:
+  name: aws
+  runtime: python3.6
+  stage: ${env:STAGE, 'dev'}
+  region: ${env:REGION, 'us-west-2'}
+package:
+  include:
+    - 'apps/**/*.py'
+    - 'requirements.txt'
+    - 'package.json'
+    - 'serverless.yml'
+  exclude:
+    - '**/*'
+plugins:
+  - serverless-offline
+  - serverless-python-requirements
+functions:
+  status:
+    handler: apps.status.handler.endpoint
+    events:
+      - http:
+          path: status
+          method: get
+custom:
+  serverless-offline:
+    host: 0.0.0.0
