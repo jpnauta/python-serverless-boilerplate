@@ -1,4 +1,4 @@
-service: gas-measurement-operations-functions
+service: python-serverless-boilerplate
 provider:
   name: aws
   runtime: python3.6
